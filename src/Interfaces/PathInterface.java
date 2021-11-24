@@ -1,5 +1,7 @@
 package Interfaces;
 
+import DijkstraPath.DijkstraPath;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -19,7 +21,7 @@ import java.util.ArrayList;
  */
 public class PathInterface extends JFrame {
 
-    private JLabel Background, Title, Inf1, Inf2, Inf3, Inf4;
+    private JLabel Background, Title, Inf1, Inf2, Inf3, Inf4, Instructions;
     private JButton Button1, Button2, Button3, Button4, Button5, Button6,  Button7,  Button8,  Button9, Button10,  Button11, Button12, Button13,  Button14,  Button15,  Button16;
     private JFrame WindowP;
     private Object press1, press2;
@@ -145,6 +147,12 @@ public class PathInterface extends JFrame {
         Inf4.setText("<Condado de los Ángeles: 10,5 Km^2>");
         Inf4.setBounds(20,200,600,600);
 
+        Instructions = new JLabel();
+        Instructions.setText("<html>Para buscar la ruta más corta presione 2 lugares en el mapa<br/>" +
+                "Para ver la información de un lugar, presione el lugar y luego el botón información</html>" );
+        Instructions.setBounds(5,0,650,50);
+        Instructions.setFont(new Font("Century Gothic", Font.BOLD,  16));
+
         Background = new JLabel();
         Background.setBounds(870,0,370, 750);
         Background.setBackground(Color.BLACK);
@@ -180,6 +188,7 @@ public class PathInterface extends JFrame {
         WindowP.add(Button14);
         WindowP.add(Button15);
         WindowP.add(Background);
+        WindowP.add(Instructions);
         WindowP.add(g);
         
     }
@@ -206,21 +215,27 @@ public class PathInterface extends JFrame {
         public void actionPerformed(ActionEvent e) {
             count++;
 
-            if(count == 1){
-                press1 = e.getSource();
+            if(count == 1){ //Boton presionado 1 vez
+                if(e.getSource() == Button16){
+                    count = 0;
+                    JOptionPane.showMessageDialog(WindowP, "Favor presionar primero un lugar en el mapa y luego el boton informacion");
+                }else{
+                    press1 = e.getSource();
+                }
 
-            }if(count == 2){
+            }if(count == 2){ //boton presionado 2 veces
                 count = 0;
                 press2 = e.getSource();
 
-                if(press2 == Button16){
+                if(press2 == Button16){ //Se presiona en la segunda vez el boton de informacion
 
                     Data data = new Data();
 
-                    for(int i = 0; i <= 15; i++){
+                    for(int i = 0; i <= 15; i++){ //Indice para recorrer el array de botones
 
-                        if(list.get(i) == press1){
+                        if(list.get(i) == press1){ //Ubica el boton presionado la primera vez
 
+                            //Condicionales para mostrar la informacion segun el boton presionado
                             if(i==0){
                                 data.DataMuelle();
 
@@ -269,6 +284,32 @@ public class PathInterface extends JFrame {
                             }
                         }
                     }
+
+                }else{ //Se presiono un lugar del mapa por segunda vez
+                    int start = 0;
+                    int destine = 0;
+
+                    for (int i = 0; i<15; i++){ //Se identifica que boton se presiono primero (inicio)
+                        if (list.get(i) == press1){
+                            start = i;
+                            i = 15;
+                        }
+                    }
+                    for (int j = 0; j<15; j++){ //Se identifica que boton se presiono en la segunda vez  (destino)
+                        if (list.get(j) == press2){
+                            destine = j;
+                            j = 15;
+                        }
+                    }
+                    String delay = JOptionPane.showInputDialog(null, "Ingrese la cantidad de atrasos en minutos");
+
+                    //Algoritmo de Dijkstra para buscar la distancia mas corta entre los 2 lugares
+                    DijkstraPath path = new DijkstraPath();
+                    double distance = path.dijsktra(start, destine);
+                    //Calculo de tiempo completo
+                    double time = distance/80;
+                    double completeTime = time + Double.parseDouble(delay);
+                    System.out.println("El tiempo total es: " + completeTime);
                 }
             }
             System.out.println("Contador " + count);
