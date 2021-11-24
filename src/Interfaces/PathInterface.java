@@ -19,7 +19,9 @@ public class PathInterface extends JFrame {
     private JLabel Background, Background2, Title, People;
     private JButton Button1, Button2, Button3, Button4, Button5, Button6,  Button7,  Button8,  Button9, Button10,  Button11, Button12, Button13,  Button14,  Button15,  Button16;
     private JFrame WindowP;
-
+    private Object press1, press2;
+    private ArrayList<Object> list = new ArrayList<>(16);
+    private int count = 0;
 
     /**
      * Constructor de la interfaz principal
