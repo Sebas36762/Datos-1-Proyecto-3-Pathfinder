@@ -26,7 +26,7 @@ public class PathInterface extends JFrame {
     /**
      * Constructor de la interfaz principal
      */
-    public PathInterface(){
+    public PathInterface() {
 
         Button1 = new JButton();
         Button1.setBounds(60, 380, 10, 10);
@@ -109,12 +109,12 @@ public class PathInterface extends JFrame {
         Title = new JLabel("L.A|CALIFORNIA|EE.UU.");
         Title.setBounds(13, 40, 400, 300);
         Title.setForeground(Color.WHITE);
-        Title.setFont(new Font("Century Gothic", Font.BOLD,30));
+        Title.setFont(new Font("Century Gothic", Font.BOLD, 30));
 
         Button16 = new JButton();
         Button16.setBounds(110, 660, 150, 30);
         Button16.setText("Información");
-        Button16.setFont(new Font("Century Gothic", Font.ITALIC,20));
+        Button16.setFont(new Font("Century Gothic", Font.ITALIC, 20));
         Button16.setForeground(Color.WHITE);
         Button16.setBackground(Color.BLACK);
         Button16.setBorder(BorderFactory.createLineBorder(Color.BLACK));
