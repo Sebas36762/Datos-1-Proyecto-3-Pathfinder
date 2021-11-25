@@ -1,7 +1,6 @@
 package Interfaces;
 
-import DijkstraPath.DijkstraPath;
-
+import DijkstraPath.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -20,7 +19,7 @@ import java.util.ArrayList;
  * Descripcion: Esta clase contiene el constructor de la interfaz principal de la aplicacion además del funcionamiento de los
  * botones con los que el usuario puede interactuar
  */
-public class PathInterface extends JFrame {
+public class path_Interface extends JFrame {
 
     private JLabel Background, Title, Inf1, Inf2, Inf3, Inf4, Instructions;
     private JButton Button1, Button2, Button3, Button4, Button5, Button6,  Button7,  Button8,  Button9, Button10,  Button11, Button12, Button13,  Button14,  Button15,  Button16;
@@ -32,7 +31,7 @@ public class PathInterface extends JFrame {
     /**
      * Constructor de la interfaz principal
      */
-    public PathInterface() {
+    public path_Interface() {
 
         Button1 = new JButton();
         Button1.setBounds(60, 380, 15, 15);

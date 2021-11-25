@@ -13,6 +13,7 @@ package DijkstraPath;
  */
 public class dijkstra_Path {
     private final int node = 15;
+    private static dijkstra_Path instance = null;
     private final double[][] graph = {
             /*1 Muelle*/           {-1, 2.5, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
             /*2 Memorial*/         {-1, -1, -1, 8.2, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
