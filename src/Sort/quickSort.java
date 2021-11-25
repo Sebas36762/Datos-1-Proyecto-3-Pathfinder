@@ -24,12 +24,13 @@ public class quickSort {
      * @return names de la lista ordenada
      */
     public String[] sort(String[] values) {
-        if (values ==null || values.length==0){
+
+        if (values ==null || values.length==0){ //Detecta si se ingresa la lista vacia
             return null;
         }
-        this.names = values;
-        name = values.length;
-        quicksort(0, name - 1);
+        this.names = values; //Copia la lista ingresada
+        name = values.length; //Cantidad de elementos de la lista
+        quicksort(0, name - 1); //Ordenamiento de la lista
         return names;
     }
 
@@ -42,22 +43,23 @@ public class quickSort {
     private void quicksort(int low, int high) {
         int i = low, j = high;
         String pivot = names[low + (high-low)/2];
+
         while (i <= j) {
-            while (names[i].compareTo(pivot) < 0) {
+            while (names[i].compareTo(pivot) < 0) { //Incrementa el valor del indice cuando el elemento es menor al pivote
                 i++;
             }
-            while (names[j].compareTo(pivot) > 0) {
+            while (names[j].compareTo(pivot) > 0) { //Decrementa el valor de j cuando el elemento es mayor al pivote
                 j--;
             }
-            if (i <= j) {
+            if (i <= j) { //Intercambio de posiciones entre el menor y el mayor
                 exchange(i, j);
                 i++;
                 j--;
             }
         }
-        if (low < j)
+        if (low < j) //Ordena el lado de la derecha respecto a j
             quicksort(low, j);
-        if (i < high)
+        if (i < high) //Ordena el lado de la izquierda respecto a i
             quicksort(i, high);
     }
 

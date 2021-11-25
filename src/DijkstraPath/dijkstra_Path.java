@@ -92,8 +92,6 @@ public class dijkstra_Path {
             }
             i++;
         }
-        System.out.println(" ");
-        System.out.println("La distancia mas corta de: "+ start +" a "+ destine +" es: "+ dist);
         return dist;
     }
 
@@ -126,7 +124,7 @@ public class dijkstra_Path {
                 }
             }
         }
-        //printSolution(distance, node);
+
         return giveDistance(distance, destine, start);
     }
 
