@@ -35,9 +35,7 @@ public class dijkstra_Path {
     /**
      * Constructor vacio del Singletoon
      */
-    protected dijkstra_Path(){
-
-    }
+    protected dijkstra_Path(){}
 
     /**
      * Metodo que implementa el patron singletoon dentro de esta clase
@@ -54,9 +52,11 @@ public class dijkstra_Path {
     /**
      * Metodo que calcula la distancia minima
      *
-     * @param graph de lista que contiene las distancias dadas
-     * @param spSet
-     * @return index
+     * @param graph lista que contiene las distancias dadas
+     * @param spSet lista que contiene la informacion si hay un camino o no para ello se utiliza un true o un false
+     * respectivamente
+     *
+     * @return index retorna la distancia minima
      */
     public double minDistance(double graph[], Boolean spSet[] ){
         double infinite = Integer.MAX_VALUE, index = -1;
@@ -68,27 +68,17 @@ public class dijkstra_Path {
                 index = i;
             }
         }
-
         return index;
     }
 
     /**
-     * Metodo:
-     * @param distance
-     * @param j
-     */
-    public void printSolution(double distance[], int j){
-        for (int i = 0; i<j; i ++){
-            System.out.println("To: " + i +" camino mas corto " + distance[i]);
-        }
-    }
-
-    /**
-     * Metodo:
-     * @param distance
-     * @param destine
-     * @param start
-     * @return dist
+     * Metodo que da como retorno la distancia mas corta entre el punto de partida y el punto final
+     *
+     * @param distance contiene las distancias mas cortas para el punto de partida
+     * @param destine indica el punto final
+     * @param start indica el punto inicial
+     *
+     * @return dist retorna la distancia mas corta entre los puntos
      */
     public double giveDistance(double distance[], int destine, int start){
         int elem = distance.length;
@@ -108,10 +98,12 @@ public class dijkstra_Path {
     }
 
     /**
-     * Metodo:
-     * @param start
-     * @param destine
-     * @return giveDistance()
+     * Metodo que contiene el algoritmo de busca del camino mas corto (Dijsktra)
+     *
+     * @param start punto inicial
+     * @param destine punto final
+     *
+     * @return giveDistance() del llamado de la funcion que determina y da la distancia minima
      */
     public double dijsktra(int start, int destine){
         double distance[] = new double[node];

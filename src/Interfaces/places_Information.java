@@ -19,11 +19,11 @@ public class places_Information {
      * Metodo que contiene la informacion que se desplegara de la ubicacion correspondiente
      */
     public void DataAmigos() {
-        JOptionPane.showMessageDialog(null, "Los amigos Bar & Grill \n" +
+        JOptionPane.showMessageDialog(null, "<Los amigos Bar & Grill> \n" +
                 "\n"+
                 "Horario: \n" +
-                "   Lunes, jueves, viernes y sábados: 11:00- 1:00 \n" +
-                "   Martes, miércoles, domingos: 11:00 – 22:00 \n" +"\n"+
+                "   -Lunes, jueves, viernes y sábados: 11:00- 1:00 \n" +
+                "   -Martes, miércoles, domingos: 11:00 – 22:00 \n" +"\n"+
                 "Teléfono: +1 818 842 3700 ");
     }
 
@@ -31,10 +31,12 @@ public class places_Information {
      * Metodo que contiene la informacion que se desplegara de la ubicacion correspondiente
      */
     public void DataGriffith() {
-        JOptionPane.showMessageDialog(null, "Griffith Observatory\n"+ "Observatorio art déco de 1935 con " +
-                "planetario de tecnología punta, " +
-                "telescopios públicos y vistas a la ciudad. \n" +"\n"+
-                "Horario: viernes, sábados y domingos de 12:00–22:00 \n" +
+        JOptionPane.showMessageDialog(null, "<Griffith Observatory>\n"+
+                "\n"+
+                "Observatorio art déco de 1935 con " + "planetario de tecnología punta, " + "telescopios públicos y vistas a la ciudad. \n" +"\n"+
+                "\n"+
+                "Horario:   -Viernes, sábados y domingos de 12:00–22:00 \n" +
+                "\n"+
                 "Teléfono: +1 213 473 0800 ");
     }
 
@@ -42,9 +44,12 @@ public class places_Information {
      * Metodo que contiene la informacion que se desplegara de la ubicacion correspondiente
      */
     public void DataChineseT(){
-        JOptionPane.showMessageDialog(null, "Chinesse Theater \n"+"Opulento y emblemático cine con huellas de manos y" +
-                " pies de estrellas, donde se celebran estrenos de películas. \n" +"\n"+
-                "Horario: 24 horas todos los días \n" +
+        JOptionPane.showMessageDialog(null, "<Chinesse Theater> \n"+
+                "\n"+
+                "Opulento y emblemático cine con huellas de manos y" + " pies de estrellas, donde se celebran estrenos de películas.\n"+
+                "\n"+
+                "Horario:   -24 horas todos los días \n" +
+                "\n"+
                 "Teléfono: +1 323 461 3331 ");
     }
 
@@ -52,7 +57,10 @@ public class places_Information {
      * Metodo que contiene la informacion que se desplegara de la ubicacion correspondiente
      */
     public void DataGrettyC(){
-        JOptionPane.showMessageDialog(null, "Getty Center \n"+"Horario: Todos los días de 10 - 17:00 \n" +
+        JOptionPane.showMessageDialog(null, "<Getty Center> \n"+
+                "\n"+
+                "Horario:   -Todos los días de 10 - 17:00 \n" +
+                "\n"+
                 "Teléfono: +1 310-440-7300 ");
     }
 
@@ -60,42 +68,55 @@ public class places_Information {
      * Metodo que contiene la informacion que se desplegara de la ubicacion correspondiente
      */
     public void DataMuelle(){
-        JOptionPane.showMessageDialog(null, "Muelle Santa Mónica \n"+"Horario: Todos los días de 6:00 - 22:00 ");
+        JOptionPane.showMessageDialog(null, "<Muelle Santa Mónica> \n"+
+                "\n"+
+                "Horario:   -Todos los días de 6:00 - 22:00 ");
     }
 
     /**
      * Metodo que contiene la informacion que se desplegara de la ubicacion correspondiente
      */
     public void DataAirport(){
-        JOptionPane.showMessageDialog(null, "Internacional Airport  \n"+"Teléfono:+1 855-463-5252 ");
+        JOptionPane.showMessageDialog(null, "<Internacional Airport>\n"+
+                "\n"+
+                "Teléfono:+1 855-463-5252 ");
     }
 
     /**
      * Metodo que contiene la informacion que se desplegara de la ubicacion correspondiente
      */
     public void DataMemorialPark(){
-        JOptionPane.showMessageDialog(null, "Memorial Park \n"+"Horario: Todos los días de 8:00 a 17:00");
+        JOptionPane.showMessageDialog(null, "<Memorial Park> \n"+
+                "\n"+
+                "Horario:   -Todos los días de 8:00 a 17:00");
     }
 
     /**
      * Metodo que contiene la informacion que se desplegara de la ubicacion correspondiente
      */
     public void DataBurger(){
-        JOptionPane.showMessageDialog(null, "In-N-out-Burger \n"+"Horario: Todos los días de 10:30 – 1:00");
+        JOptionPane.showMessageDialog(null, "<In-N-out-Burger> \n"+
+                "\n"+
+                "Horario:   -Todos los días de 10:30 – 1:00");
     }
 
     /**
      * Metodo que contiene la informacion que se desplegara de la ubicacion correspondiente
      */
     public void DataChicken(){
-        JOptionPane.showMessageDialog(null, "Raising Cane's Chicken finger \n"+"Horario: Todos los días de 9:00 – 1:00");
+        JOptionPane.showMessageDialog(null, "<Raising Cane's Chicken finger> \n"+
+                "\n"+
+                "Horario:   -Todos los días de 9:00 – 1:00");
     }
 
     /**
      * Metodo que contiene la informacion que se desplegara de la ubicacion correspondiente
      */
     public void DataGas(){
-        JOptionPane.showMessageDialog(null, "Gas Station Chevron \n"+"Horario: Abierto las 24 horas \n" +
+        JOptionPane.showMessageDialog(null, "<Gas Station Chevron> \n"+
+                "\n"+
+                "Horario:   -Abierto las 24 horas \n" +
+                "\n"+
                 "Teléfono: +1 305-446-2942 ");
     }
 
@@ -103,11 +124,14 @@ public class places_Information {
      * Metodo que contiene la informacion que se desplegara de la ubicacion correspondiente
      */
     public void DataMuseoLA(){
-        JOptionPane.showMessageDialog(null, "Los Angeles County Museum of Art  \n"+"Campus con proyecciones, conciertos " +
-                "y colecciones diversas que abarcan toda la historia del arte. \n" +"\n"+
+        JOptionPane.showMessageDialog(null, "<Los Angeles County Museum of Art>  \n"+
+                "\n"+
+                "Campus con proyecciones, conciertos " + "y colecciones diversas que abarcan toda la historia del arte. \n" +
+                "\n"+
                 "Horario:  \n" +
-                "Lunes, martes, miércoles, jueves:11:00–18:00 \n" +
-                "Viernes, sábado y domingo: 11:00 – 19:00 \n" +"\n"+
+                "   -Lunes, martes, miércoles, jueves:11:00–18:00 \n" +
+                "   -Viernes, sábado y domingo: 11:00 – 19:00 \n" +
+                "\n"+
                 "Teléfono: +1 323 857 6000 ");
     }
 
@@ -115,7 +139,10 @@ public class places_Information {
      * Metodo que contiene la informacion que se desplegara de la ubicacion correspondiente
      */
     public void DataPalosV(){
-        JOptionPane.showMessageDialog(null, "Palos Verdes Nature Preserve \n"+"Horario: Todos los días de 5:40 – 19:50. \n" +
+        JOptionPane.showMessageDialog(null, "<Palos Verdes Nature Preserve> \n"+
+                "\n"+
+                "Horario:   -Todos los días de 5:40 – 19:50. \n" +
+                "\n"+
                 "Teléfono: +1 310 544 5353 ");
     }
 
@@ -123,7 +150,10 @@ public class places_Information {
      * Metodo que contiene la informacion que se desplegara de la ubicacion correspondiente
      */
     public void DataAngelus(){
-        JOptionPane.showMessageDialog(null, "Angelus Rosedale Cemetery \n"+"Horario: Todos los días de 9:0\n"+
+        JOptionPane.showMessageDialog(null, "<Angelus Rosedale Cemetery> \n"+
+                "\n"+
+                "Horario:   -Todos los días de 9:0\n"+
+                "\n"+
                 "Teléfono: +1 323-734-3155 ");
     }
 
@@ -131,7 +161,10 @@ public class places_Information {
      * Metodo que contiene la informacion que se desplegara de la ubicacion correspondiente
      */
     public void DataWalmart(){
-        JOptionPane.showMessageDialog(null, "Walmart Super Center \n"+"Horario: Todos los días de 6am a 11pm \n" +
+        JOptionPane.showMessageDialog(null, "<Walmart Super Center> \n"+
+                "\n"+
+                "Horario:   Todos los días de 6am a 11pm \n" +
+                "\n"+
                 "Teléfono: +1 626 307 1010");
     }
 
@@ -139,8 +172,10 @@ public class places_Information {
      * Metodo que contiene la informacion que se desplegara de la ubicacion correspondiente
      */
     public void DataInstitutoCA(){
-        JOptionPane.showMessageDialog(null, "California institute of technology \n"+"Universidad privada de investigación fundada en 1891, " +
-                "conocida por sus programas de Ingeniería y Ciencia.  \n" +
+        JOptionPane.showMessageDialog(null, "<California institute of technology> \n"+
+                "\n"+
+                "Universidad privada de investigación fundada en 1891, " + "conocida por sus programas de Ingeniería y Ciencia.  \n" +
+                "\n"+
                 "Teléfono: +1 626 395 6811");
     }
 

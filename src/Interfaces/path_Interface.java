@@ -137,7 +137,7 @@ public class path_Interface extends JFrame {
         Inf1 = new JLabel();
         Inf1.setForeground(Color.WHITE);
         Inf1.setFont(new Font("Century Gothic", Font.PLAIN, 16));
-        Inf1.setText("<Ciudad de Los Ángeles: 1222,4 Km^2>");
+        Inf1.setText("<Ciudad de Los Angeles: 1222,4 Km^2>");
         Inf1.setBounds(20, 50, 600, 600);
 
         Inf2 = new JLabel();
@@ -155,7 +155,7 @@ public class path_Interface extends JFrame {
         Inf4 = new JLabel();
         Inf4.setForeground(Color.WHITE);
         Inf4.setFont(new Font("Century Gothic", Font.PLAIN,  16));
-        Inf4.setText("<Condado de los Ángeles: 10,5 Km^2>");
+        Inf4.setText("<Condado de los Angeles: 10,5 Km^2>");
         Inf4.setBounds(20,200,600,600);
 
         Instructions = new JLabel();
@@ -241,6 +241,7 @@ public class path_Interface extends JFrame {
                 //Algoritmo de Dijkstra para buscar la distancia mas corta entre los 2 lugares
                 dijkstra_Path path = dijkstra_Path.getInstance();
                 double distance = path.dijsktra(start, destine);
+
                 //Calculo de tiempo completo
                 double time = (distance/80)*60;
                 double completeTime = time + Double.parseDouble(delay);
