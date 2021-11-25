@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"DijkstraPath","l":"dijkstra_Path"},{"p":"Interfaces","l":"graphic"},{"p":"Interfaces","l":"inf_Interface"},{"p":"Interfaces","l":"path_Interface"},{"p":"Interfaces","l":"places_Information"},{"p":"Sort","l":"quickSort"},{"p":"<Unnamed>","l":"Runnable"}];updateSearchResults();
