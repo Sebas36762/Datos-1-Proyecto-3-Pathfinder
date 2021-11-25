@@ -72,12 +72,24 @@ public class dijkstra_Path {
         return index;
     }
 
+    /**
+     * Metodo:
+     * @param distance
+     * @param j
+     */
     public void printSolution(double distance[], int j){
         for (int i = 0; i<j; i ++){
             System.out.println("To: " + i +" camino mas corto " + distance[i]);
         }
     }
 
+    /**
+     * Metodo:
+     * @param distance
+     * @param destine
+     * @param start
+     * @return dist
+     */
     public double giveDistance(double distance[], int destine, int start){
         int elem = distance.length;
         int i = 0;
@@ -95,6 +107,12 @@ public class dijkstra_Path {
         return dist;
     }
 
+    /**
+     * Metodo:
+     * @param start
+     * @param destine
+     * @return giveDistance()
+     */
     public double dijsktra(int start, int destine){
         double distance[] = new double[node];
         Boolean spSet[] = new Boolean[node];
