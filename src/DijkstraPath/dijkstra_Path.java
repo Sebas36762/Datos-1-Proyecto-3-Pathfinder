@@ -1,6 +1,17 @@
 package DijkstraPath;
 
-public class DijkstraPath {
+/**
+ * Instituto Tecnologico de Costa Rica
+ * Area Ingenieria en Computadores
+ *
+ * Lenguaje: Java
+ * Clase: dijkstra_Path
+ * @version 1.0
+ * @author Angelo Ceciliano, Byron Mata, Gustavo Alvarado y Sebastian Chaves
+ *
+ * Descripcion: Clase que aplica el algoritmo de Dijkstra para encontrar la ruta más rapida entre 2 puntos
+ */
+public class dijkstra_Path {
     private final int node = 15;
     private final double[][] graph = {
             /*1 Muelle*/           {-1, 2.5, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
@@ -20,6 +31,32 @@ public class DijkstraPath {
             /*15 Raising*/         {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 25.7, -1, 19.6, -1, -1},
     };
 
+    /**
+     * Constructor vacio del Singletoon
+     */
+    protected dijkstra_Path(){
+
+    }
+
+    /**
+     * Metodo que implementa el patron singletoon dentro de esta clase
+     *
+     * @return instance
+     */
+    public static dijkstra_Path getInstance(){
+        if (instance == null){
+            instance = new dijkstra_Path();
+        }
+        return instance;
+    }
+
+    /**
+     * Metodo que calcula la distancia minima
+     *
+     * @param graph de lista que contiene las distancias dadas
+     * @param spSet
+     * @return index
+     */
     public double minDistance(double graph[], Boolean spSet[] ){
         double infinite = Integer.MAX_VALUE, index = -1;
 
@@ -80,12 +117,6 @@ public class DijkstraPath {
         }
         //printSolution(distance, node);
         return giveDistance(distance, destine, start);
-
-    }
-
-    public static void main(String[] args) {
-        DijkstraPath path = new DijkstraPath();
-        path.dijsktra(0, 13);
     }
 
 }

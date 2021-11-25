@@ -7,13 +7,13 @@ import javax.swing.*;
  * Area Ingenieria en Computadores
  *
  * Lenguaje: Java
- * Clase: Data
+ * Clase: places_Information
  * @version 1.0
  * @author Angelo Ceciliano, Byron Mata, Gustavo Alvarado y Sebastian Chaves
  *
  * Descripcion: Esta clase contiene los metodos los cuales contienen la informacion de las distintas locaciones
  */
-public class Data {
+public class places_Information {
 
     /**
      * Metodo que contiene la informacion que se desplegara de la ubicacion correspondiente

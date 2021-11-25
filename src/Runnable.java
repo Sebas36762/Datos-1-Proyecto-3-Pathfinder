@@ -1,10 +1,10 @@
-import Interfaces.PathInterface;
+import Interfaces.path_Interface;
 
 public class Runnable {
 
     public static void main(String[] args) {
 
-        PathInterface PI = new PathInterface();
+        path_Interface PI = new path_Interface();
 
     }
 

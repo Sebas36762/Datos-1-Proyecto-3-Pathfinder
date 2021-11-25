@@ -13,11 +13,12 @@ import java.util.ArrayList;
  * Area Ingenieria en Computadores
  *
  * Lenguaje: Java
- * Clase: PathInterface
+ * Clase: path_Interface
  * @version 1.0
  * @author Angelo Ceciliano, Byron Mata, Gustavo Alvarado y Sebastian Chaves
  *
- * Descripcion: Esta clase contiene el constructor de la interfaz principal de la aplicacion
+ * Descripcion: Esta clase contiene el constructor de la interfaz principal de la aplicacion además del funcionamiento de los
+ * botones con los que el usuario puede interactuar
  */
 public class PathInterface extends JFrame {
 
@@ -120,8 +121,19 @@ public class PathInterface extends JFrame {
         Button16.setForeground(Color.WHITE);
         Button16.setBackground(Color.BLACK);
         Button16.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        Button16.addActionListener(new ButtonListener());
-        list.add(Button16);
+        Button16.addActionListener(new ActionListener() {
+
+            /**
+             * Metodo para llevar a cabo las acciones del boton
+             *
+             * @param e para eventos al accionar el boton
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                inf_Interface inf = new inf_Interface();
+            }
+        });
+        //list.add(Button16);
 
         Inf1 = new JLabel();
         Inf1.setForeground(Color.WHITE);
@@ -148,9 +160,8 @@ public class PathInterface extends JFrame {
         Inf4.setBounds(20,200,600,600);
 
         Instructions = new JLabel();
-        Instructions.setText("<html>Para buscar la ruta más corta presione 2 lugares en el mapa<br/>" +
-                "Para ver la información de un lugar, presione el lugar y luego el botón información</html>" );
-        Instructions.setBounds(5,0,650,50);
+        Instructions.setText("Para buscar la ruta más corta presione 2 lugares en el mapa");
+        Instructions.setBounds(1,0,650,50);
         Instructions.setFont(new Font("Century Gothic", Font.BOLD,  16));
 
         Background = new JLabel();
@@ -158,13 +169,9 @@ public class PathInterface extends JFrame {
         Background.setBackground(Color.BLACK);
         Background.setOpaque(true);
         Background.add(Button16);
-        Background.add(Title);
-        Background.add(Inf1);
-        Background.add(Inf2);
-        Background.add(Inf3);
-        Background.add(Inf4);
+        Background.add(Title); Background.add(Inf1); Background.add(Inf2); Background.add(Inf3); Background.add(Inf4);
 
-        Graphic g = new Graphic();
+        graphic g = new graphic();
 
         WindowP = new JFrame("PathFinder");
         WindowP.setVisible(true);
@@ -172,23 +179,10 @@ public class PathInterface extends JFrame {
         WindowP.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         WindowP.setResizable(false);
 
-        WindowP.add(Button1);
-        WindowP.add(Button2);
-        WindowP.add(Button3);
-        WindowP.add(Button4);
-        WindowP.add(Button5);
-        WindowP.add(Button6);
-        WindowP.add(Button7);
-        WindowP.add(Button8);
-        WindowP.add(Button9);
-        WindowP.add(Button10);
-        WindowP.add(Button11);
-        WindowP.add(Button12);
-        WindowP.add(Button13);
-        WindowP.add(Button14);
-        WindowP.add(Button15);
-        WindowP.add(Background);
-        WindowP.add(Instructions);
+        WindowP.add(Button1); WindowP.add(Button2); WindowP.add(Button3); WindowP.add(Button4); WindowP.add(Button5);
+        WindowP.add(Button6); WindowP.add(Button7); WindowP.add(Button8); WindowP.add(Button9); WindowP.add(Button10);
+        WindowP.add(Button11); WindowP.add(Button12); WindowP.add(Button13); WindowP.add(Button14); WindowP.add(Button15);
+        WindowP.add(Background);WindowP.add(Instructions);
         WindowP.add(g);
         
     }
@@ -223,94 +217,35 @@ public class PathInterface extends JFrame {
                     press1 = e.getSource();
                 }
 
-            }if(count == 2){ //boton presionado 2 veces
+            } if(count == 2){ //boton presionado 2 veces
                 count = 0;
                 press2 = e.getSource();
 
-                if(press2 == Button16){ //Se presiona en la segunda vez el boton de informacion
+                int start = 0;
+                int destine = 0;
 
-                    Data data = new Data();
-
-                    for(int i = 0; i <= 15; i++){ //Indice para recorrer el array de botones
-
-                        if(list.get(i) == press1){ //Ubica el boton presionado la primera vez
-
-                            //Condicionales para mostrar la informacion segun el boton presionado
-                            if(i==0){
-                                data.DataMuelle();
-
-                            }else if(i==1){
-                                data.DataMemorialPark();
-
-                            }else if(i==2){
-                                data.DataAirport();
-
-                            }else if (i==3){
-                                data.DataGrettyC();
-                                
-                            }else if(i==4){
-                                data.DataAmigos();
-
-                            }else if(i==5){
-                                data.DataChineseT();
-
-                            }else if(i==6){
-                                data.DataMuseoLA();
-
-                            }else if(i==7){
-                                data.DataGriffith();
-
-                            }else if(i==8){
-                                data.DataInstitutoCA();
-
-                            }else if(i==9){
-                                data.DataWalmart();
-
-                            }else if(i==10){
-                                data.DataAngelus();
-
-                            }else if(i==11){
-                                data.DataGas();
-
-                            }else if(i==12){
-                                data.DataBurger();
-
-                            }else if(i==13){
-                                data.DataPalosV();
-
-                            }else{
-                                data.DataChicken();
-
-                            }
-                        }
+                for (int i = 0; i<15; i++){ //Se identifica que boton se presiono primero (inicio)
+                    if (list.get(i) == press1){
+                        start = i;
+                        i = 15;
                     }
-
-                }else{ //Se presiono un lugar del mapa por segunda vez
-                    int start = 0;
-                    int destine = 0;
-
-                    for (int i = 0; i<15; i++){ //Se identifica que boton se presiono primero (inicio)
-                        if (list.get(i) == press1){
-                            start = i;
-                            i = 15;
-                        }
-                    }
-                    for (int j = 0; j<15; j++){ //Se identifica que boton se presiono en la segunda vez  (destino)
-                        if (list.get(j) == press2){
-                            destine = j;
-                            j = 15;
-                        }
-                    }
-                    String delay = JOptionPane.showInputDialog(null, "Ingrese la cantidad de atrasos en minutos");
-
-                    //Algoritmo de Dijkstra para buscar la distancia mas corta entre los 2 lugares
-                    DijkstraPath path = new DijkstraPath();
-                    double distance = path.dijsktra(start, destine);
-                    //Calculo de tiempo completo
-                    double time = distance/80;
-                    double completeTime = time + Double.parseDouble(delay);
-                    System.out.println("El tiempo total es: " + completeTime);
                 }
+
+                for (int j = 0; j<15; j++){ //Se identifica que boton se presiono en la segunda vez  (destino)
+                    if (list.get(j) == press2){
+                        destine = j;
+                        j = 15;
+                    }
+                }
+                String delay = JOptionPane.showInputDialog(null, "Ingrese la cantidad de atrasos en minutos");
+
+                //Algoritmo de Dijkstra para buscar la distancia mas corta entre los 2 lugares
+                dijkstra_Path path = dijkstra_Path.getInstance();
+                double distance = path.dijsktra(start, destine);
+                //Calculo de tiempo completo
+                double time = (distance/80)*60;
+                double completeTime = time + Double.parseDouble(delay);
+                JOptionPane.showMessageDialog(null, "El tiempo estimado es de: " + completeTime);
             }
             System.out.println("Contador " + count);
         }
